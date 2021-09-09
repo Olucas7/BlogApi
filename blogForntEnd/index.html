@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <title>Avance 2 - Front End</title>
 </head>
-<script src="js/script.js"></script>
+
 <body>
     <!-- Header menu  -->
     <header>
@@ -21,8 +21,7 @@
                 <nav>
                     <ul>
                         <li class="menu-selected"><a class= "text-menu-selected" href="#">Inicio</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        
                     </ul>
                 </nav>
             </div>
@@ -40,21 +39,42 @@
             </div>
         </div>
     <!-- articulo -->
-    <div class="container-content">
-        <article id="article">
-            <h1>Titulo del articulo</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt magnam odit beatae aperiam unde modi eligendi veniam nemo, eos ratione minus labore possimus, quisquam libero quidem. Labore quas sunt atque.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, eligendi? Ut earum natus suscipit eaque quae praesentium laboriosam rerum et? Quibusdam cum voluptatem, est unde reprehenderit explicabo. Fuga, ut similique!</p>
-            <h1>Subtitulo del articulo</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, eligendi? Ut earum natus suscipit eaque quae praesentium laboriosam rerum et? Quibusdam cum voluptatem, est unde reprehenderit explicabo. Fuga, ut similique!</p>
-            <img src="https://www.tooltyp.com/wp-content/uploads/2014/10/1900x920-8-beneficios-de-usar-imagenes-en-nuestros-sitios-web.jpg" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, eligendi? Ut earum natus suscipit eaque quae praesentium laboriosam rerum et? Quibusdam cum voluptatem, est unde reprehenderit explicabo. Fuga, ut similique!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, eligendi? Ut earum natus suscipit eaque quae praesentium laboriosam rerum et? Quibusdam cum voluptatem, est unde reprehenderit explicabo. Fuga, ut similique!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, eligendi? Ut earum natus suscipit eaque quae praesentium laboriosam rerum et? Quibusdam cum voluptatem, est unde reprehenderit explicabo. Fuga, ut similique!</p>
+    <h2 class="logo">Posts</h2>
+    <div id="app" class="container-content" >
+        <div class="article--container" v-for="item in posts" >
+            <p>---------------------------------</p>
+            <p>Id: {{item.id}}</p>
+            <p>Autor: {{item.author.name}}</p>
+            <p>Email: {{item.author.email}}</p>
+            <p>Titulo: {{item.title}}</p>
+            <p>Contenido: {{item.content}}</p>
+            <p>---------------------------------</p>
+        </div>
 
-        </article>
 
+        <div id="app" class="logo">
+            <h2>Editar Post</h2>
+            <span>Id: </span>
+            <input id="id" type="text" v-model="id">
+            <span>Titulo: </span>
+            <input id="titulo" type="text" v-model="actualizar_titulo">
+            <span>Content: </span>
+            <input id="content" type="text" v-model="actualizar_content">
+            <button @click="actualizar_post" >ACTUALIZAR POST</button>
+            
+        </div>
+        <div id="app" class="logo">
+            <h2>Crear Post</h2>
+            <span>Titulo: </span>
+            <input id="titulo" type="text" v-model="crear_titulo">
+            <span>Content: </span>
+            <input id="content" type="text" v-model="crear_content">
+            <button @click="crear_post" >CREAR POST</button>
+        </div>
     </div>
+
+    
+
 
     <div class="container-footer">	
 
@@ -75,5 +95,8 @@
         </footer>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

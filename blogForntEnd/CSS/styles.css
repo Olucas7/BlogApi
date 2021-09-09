@@ -126,21 +126,18 @@ header {
 
 /* Container contenido del articulo */
 .container-content{
-    width: 1200px;
-    margin: auto;
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+      overflow: scroll;
+      padding: 30px;
+      position: relative;
 }
 
 article{
-    width: 100%;
-    padding: 20px;
-    padding-bottom: 40px;
-    box-shadow: -10px 0 20px -30px black;
-    border-radius: 6px;
-    position: relative;
-    overflow: hidden;    
+    white-space: wrap;
+    margin: 70px 0px;
+    padding-bottom: 10px;
+    overflow: hidden;
+
 }
 
 article:before{
@@ -240,6 +237,16 @@ footer .redes-footer .fa-instagram:hover{
     margin-top: 40px;
     color: #8e8e8e;
     font-weight: 500;
+}
+.article--container {
+    white-space: nowrap;
+      margin: 70px 0px;
+      padding-bottom: 10px;
+      overflow: hidden;
+      margin-right: 10px;
+      display: inline-block;
+      
+
 }
 
 /* Responsive Design - adaptable a dispositivos moviles*/
